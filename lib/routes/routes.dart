@@ -2,13 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tathkra/features/home/presentation/view/home_view.dart';
 import '../core/resources/manager_strings.dart';
+import '../features/add_company/presentation/view/add_company_view.dart';
 import '../features/auth/presentation/view/login_view.dart';
 import '../features/company/presentation/view/company_view.dart';
+import '../features/company_name/presentation/view/company_name_view.dart';
 
 class Routes {
   static const String loginView = '/login_view';
   static const String homeView = '/home_view';
   static const String companyView = '/company_view';
+  static const String addCompanyView = '/add_company_view';
+  static const String companyNameView = '/company_name_view';
 
 
 }
@@ -23,6 +27,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const HomeView());
       case Routes.companyView:
         return MaterialPageRoute(builder: (_) => const CompanyView());
+      case Routes.addCompanyView:
+        return MaterialPageRoute(builder: (_) => const AddCompanyView());
+      case Routes.companyNameView:
+        return MaterialPageRoute(builder: (_) => const CompanyNameView());
       default:
         return unDefineRoute();
     }

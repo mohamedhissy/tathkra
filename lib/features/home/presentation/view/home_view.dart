@@ -141,26 +141,27 @@ class HomeView extends StatelessWidget {
 
                   // كروت الصف السفلي: responsive Row / Column
                   screenWidth > 800
-                      ? Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      buildMiniCard(
-                        title: ManagerStrings.trips,
-                        icon: Icons.directions_bus_sharp,
-                        value: '250',
-                        color: ManagerColors.red,
-                        iconColor: ManagerColors.red,
-                      ),
-                      SizedBox(width: ManagerWidth.w20),
-                      buildMiniCard(
-                        title: ManagerStrings.trips,
-                        icon: Icons.store,
-                        value: '45',
-                        color: ManagerColors.yellow,
-                        iconColor: ManagerColors.yellow,
-                      ),
-                    ],
+                      ? SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        buildMiniCard(
+                          title: ManagerStrings.trips,
+                          icon: Icons.directions_bus_sharp,
+                          value: '250',
+                          color: ManagerColors.red,
+                          iconColor: ManagerColors.red,
+                        ),
+                        SizedBox(width: ManagerWidth.w20),
+                        buildMiniCard(
+                          title: ManagerStrings.trips,
+                          icon: Icons.store,
+                          value: '45',
+                          color: ManagerColors.yellow,
+                          iconColor: ManagerColors.yellow,
+                        ),
+                      ],
+                    ),
                   )
                       : Column(
                     children: [

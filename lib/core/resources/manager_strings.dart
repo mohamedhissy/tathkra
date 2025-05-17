@@ -17,5 +17,15 @@ class ManagerStrings {
   static const String phone = ' : الهاتف';
   static const String numberOfTrips = ' : عدد الرحلات';
   static const String addANewCompany = 'إضافة شركة جديدة';
+  static const String newCompany = 'شركة جديدة';
+  static const String userName = 'اسم المستخدم';
+  static const String enterUserName = 'أدخل اسم المستخدم';
+  static const String enterYourPassword = 'أدخل كلمة المرور';
+  static const String phoneNumber = 'رقم الهاتف';
+  static const String enterPhoneNumber = 'أدخل رقم الهاتف';
+  static const String address = 'العنوان';
+  static const String enterTheAddress = 'أدخل العنوان';
+  static const String addition = 'إضافة';
+  static const String delete = 'حذف';
 
 }
