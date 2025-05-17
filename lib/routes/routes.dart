@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tathkra/features/home/presentation/view/home_view.dart';
 import '../core/resources/manager_strings.dart';
 import '../features/auth/presentation/view/login_view.dart';
 
@@ -23,6 +24,8 @@ class RouteGenerator {
       case Routes.loginView:
         // initAuth();
         return MaterialPageRoute(builder: (_) => const LoginView());
+      case Routes.homeView:
+        return MaterialPageRoute(builder: (_) => const HomeView());
       default:
         return unDefineRoute();
     }
