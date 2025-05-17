@@ -3,18 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:tathkra/features/home/presentation/view/home_view.dart';
 import '../core/resources/manager_strings.dart';
 import '../features/auth/presentation/view/login_view.dart';
+import '../features/company/presentation/view/company_view.dart';
 
 class Routes {
-  static const String splashScreen = '/splash_screen';
-  static const String outBoardingView = '/out_boarding_view';
   static const String loginView = '/login_view';
-  static const String registerView = '/register_view';
   static const String homeView = '/home_view';
-  static const String profileView = '/profile_view';
-  static const String detailsView = '/view_details';
-  static const String settingView = '/setting_view';
-  static const String cartView = '/cart_view';
-  static const String brandView = '/view_details';
+  static const String companyView = '/company_view';
+
 
 }
 
@@ -26,6 +21,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.homeView:
         return MaterialPageRoute(builder: (_) => const HomeView());
+      case Routes.companyView:
+        return MaterialPageRoute(builder: (_) => const CompanyView());
       default:
         return unDefineRoute();
     }

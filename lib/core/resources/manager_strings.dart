@@ -10,5 +10,12 @@ class ManagerStrings {
   static const String trips = 'الرحلات';
   static const String addATrip = 'إضافة رحلة';
   static const String citiesAndRegions = 'المدن والمناطق';
+  static const String companies = 'الشركات';
+  static const String companyName = 'اسم الشركة';
+  static const String effective = 'فعالة';
+  static const String details = 'التفاصيل';
+  static const String phone = ' : الهاتف';
+  static const String numberOfTrips = ' : عدد الرحلات';
+  static const String addANewCompany = 'إضافة شركة جديدة';
 
 }

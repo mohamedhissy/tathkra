@@ -13,6 +13,7 @@ class ManagerColors {
   static Color white70 = Colors.white70;
   static Color red = Colors.red;
   static Color green = Colors.green;
+  static Color grey = Colors.grey;
   static Color yellow = Color(0xffFFC72E);
   static Color outBoardingTitleColor = const Color(0xff817A7A);
   static const Color progressIndicatorColor = Color(0xffF5DF99);
@@ -34,4 +35,6 @@ class ManagerColors {
   static const Color editColor = Color(0xff787B7D);
   static Color greensh =Color(0xffA3C6A6) ;
   static Color middle =Color(0xffCFC8D9) ;
+  static Color bgColorcompany =Color(0xffF8F9FA);
+  static Color bgFrameColorcompany =Color(0xffB2B2B2);
 }

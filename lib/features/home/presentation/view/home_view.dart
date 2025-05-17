@@ -181,10 +181,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   SizedBox(height: ManagerHeight.h20),
-
-                  // زر المدن والمناطق
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: ManagerColors.primaryColor,
