@@ -21,6 +21,9 @@ class CompanyNameView extends StatelessWidget {
           ),
         ),
       ),
+      body: Container(
+
+      ),
     );
   }
 }
