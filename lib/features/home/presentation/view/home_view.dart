@@ -16,8 +16,12 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
-          child: Icon(Icons.logout, color: ManagerColors.red, size: 40),
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: Icon(
+            Icons.logout,
+            color: ManagerColors.red,
+            size: 40,
+          ),
         ),
         actions: [
           Text(
@@ -28,7 +32,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20),
+            margin: EdgeInsets.symmetric(horizontal: 20),
             width: 60,
             height: 60,
             decoration: BoxDecoration(
@@ -44,7 +48,6 @@ class HomeView extends StatelessWidget {
           double screenWidth = constraints.maxWidth;
           double cardWidth = screenWidth > 1000 ? 760 : screenWidth - 40;
           double cardMargin = screenWidth > 1000 ? 360 : 20;
-          double miniCardWidth = screenWidth > 800 ? 370 : screenWidth - 60;
 
           return SingleChildScrollView(
             child: Container(
@@ -93,6 +96,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: ManagerHeight.h30),
+
                   // الكرت الثاني
                   Container(
                     width: cardWidth,
@@ -134,9 +138,11 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: ManagerHeight.h30),
-                  // الكروت المصغرة
+
+                  // كروت الصف السفلي: responsive Row / Column
                   screenWidth > 800
                       ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       buildMiniCard(
@@ -145,7 +151,6 @@ class HomeView extends StatelessWidget {
                         value: '250',
                         color: ManagerColors.red,
                         iconColor: ManagerColors.red,
-                        width: miniCardWidth,
                       ),
                       SizedBox(width: ManagerWidth.w20),
                       buildMiniCard(
@@ -154,7 +159,6 @@ class HomeView extends StatelessWidget {
                         value: '45',
                         color: ManagerColors.yellow,
                         iconColor: ManagerColors.yellow,
-                        width: miniCardWidth,
                       ),
                     ],
                   )
@@ -166,7 +170,6 @@ class HomeView extends StatelessWidget {
                         value: '250',
                         color: ManagerColors.red,
                         iconColor: ManagerColors.red,
-                        width: miniCardWidth,
                       ),
                       SizedBox(height: ManagerHeight.h20),
                       buildMiniCard(
@@ -175,7 +178,6 @@ class HomeView extends StatelessWidget {
                         value: '45',
                         color: ManagerColors.yellow,
                         iconColor: ManagerColors.yellow,
-                        width: miniCardWidth,
                       ),
                     ],
                   ),
@@ -183,13 +185,14 @@ class HomeView extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: ManagerColors.primaryColor,
-                      fixedSize: const Size(250, 50),
+                      fixedSize: Size(250, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
                     onPressed: () {},
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -217,22 +220,23 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  // تابع فرعي لبناء الكروت المصغرة
   Widget buildMiniCard({
     required String title,
     required IconData icon,
     required String value,
     required Color color,
     required Color iconColor,
-    required double width, // تم التعديل هنا
   }) {
     return Container(
-      width: width,
+      width: 370,
       height: 180,
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
@@ -258,10 +262,10 @@ class HomeView extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 30),
+            margin: EdgeInsets.symmetric(horizontal: 30),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(0, 50),
+                minimumSize: Size(0, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -277,7 +281,11 @@ class HomeView extends StatelessWidget {
                       fontSize: ManagerFontSizes.s24,
                     ),
                   ),
-                  Icon(Icons.add_circle, color: iconColor, size: 25),
+                  Icon(
+                    Icons.add_circle,
+                    color: iconColor,
+                    size: 25,
+                  ),
                 ],
               ),
             ),

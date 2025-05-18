@@ -6,6 +6,7 @@ import '../features/add_company/presentation/view/add_company_view.dart';
 import '../features/auth/presentation/view/login_view.dart';
 import '../features/company/presentation/view/company_view.dart';
 import '../features/company_name/presentation/view/company_name_view.dart';
+import '../features/tathkra_home/presentation/view/tathkra_home_view.dart';
 
 class Routes {
   static const String loginView = '/login_view';
@@ -13,6 +14,7 @@ class Routes {
   static const String companyView = '/company_view';
   static const String addCompanyView = '/add_company_view';
   static const String companyNameView = '/company_name_view';
+  static const String tathkraHomeView = '/tathkra_home_view';
 
 
 }
@@ -31,6 +33,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const AddCompanyView());
       case Routes.companyNameView:
         return MaterialPageRoute(builder: (_) => const CompanyNameView());
+      case Routes.tathkraHomeView:
+        return MaterialPageRoute(builder: (_) => const TathkraHomeView());
       default:
         return unDefineRoute();
     }

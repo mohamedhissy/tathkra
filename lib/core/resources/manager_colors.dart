@@ -37,4 +37,5 @@ class ManagerColors {
   static Color middle =Color(0xffCFC8D9) ;
   static Color bgColorcompany =Color(0xffF8F9FA);
   static Color bgFrameColorcompany =Color(0xffB2B2B2);
+  static Color bgColorNamecompany =Color(0xffB2B2B2);
 }

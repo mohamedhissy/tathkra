@@ -27,5 +27,9 @@ class ManagerStrings {
   static const String enterTheAddress = 'أدخل العنوان';
   static const String addition = 'إضافة';
   static const String delete = 'حذف';
+  static const String enterCompanyName = 'أدخل اسم الشركة';
+  static const String eidt = 'تعديل';
+  static const String reservationsAwaitingConfirmation = 'حجوزات بانتظار التأكيد';
+  static const String numberOfConfirmedReservations = 'عدد الحجوزات المؤكدة';
 
 }

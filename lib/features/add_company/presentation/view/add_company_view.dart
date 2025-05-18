@@ -40,18 +40,27 @@ class AddCompanyView extends StatelessWidget {
                 children: [
                   SizedBox(height: ManagerHeight.h24),
                   _buildLabel(ManagerStrings.userName, horizontalMargin),
+                  SizedBox(height: 10,),
                   _buildTextField(ManagerStrings.enterUserName, horizontalMargin),
+
+                  SizedBox(height: ManagerHeight.h24),
+                  _buildLabel(ManagerStrings.companyName, horizontalMargin),
+                  SizedBox(height: 10,),
+                  _buildTextField(ManagerStrings.enterCompanyName, horizontalMargin),
 
                   SizedBox(height: 30),
                   _buildLabel(ManagerStrings.password, horizontalMargin),
+                  SizedBox(height: 10,),
                   _buildTextField(ManagerStrings.enterYourPassword, horizontalMargin),
 
                   SizedBox(height: 30),
                   _buildLabel(ManagerStrings.phoneNumber, horizontalMargin),
+                  SizedBox(height: 10,),
                   _buildTextField(ManagerStrings.enterPhoneNumber, horizontalMargin),
 
                   SizedBox(height: 30),
                   _buildLabel(ManagerStrings.address, horizontalMargin),
+                  SizedBox(height: 10,),
                   _buildTextField(ManagerStrings.enterTheAddress, horizontalMargin),
 
                   SizedBox(height: 30),
