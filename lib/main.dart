@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:tathkra/routes/routes.dart';
 import 'config/dependancy_injection.dart';
@@ -15,8 +16,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      title: 'Tathkra',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ar'), // اللغة العربية
+        Locale('en'), // اللغة الإنجليزية (اختياري)
+      ],
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.tripsView,
+      initialRoute: Routes.tripDetailsView,
       onGenerateRoute: RouteGenerator.getRoute,
     );
   }

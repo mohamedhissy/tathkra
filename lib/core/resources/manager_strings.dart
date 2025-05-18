@@ -34,5 +34,18 @@ class ManagerStrings {
   static const String tripHistory = 'تاريخ الرحلة';
   static const String editDetails = 'تعديل التفاصيل';
   static const String addANewTrip = 'إضافة رحلة جديدة';
+  static const String gender = 'الجنس : ';
+  static const String phoneBookATrip = 'الهاتف : ';
+  static const String tripCode = 'رمز الرحلة';
+  static const String fromTheCity = 'من مدينة';
+  static const String toTheCity = 'إلى مدينة';
+  static const String theDate = 'التاريخ';
+  static const String access = 'الوصول';
+  static const String launch = 'الانطلاق';
+  static const String ticketPrice = 'سعر التذكرة';
+  static const String numberOfSeats = 'عدد المقاعد';
+  static const String saveInformation = 'حفظ المعلومات';
+  static const String cancellation = 'الغاء';
+
 
 }

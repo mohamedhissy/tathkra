@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../core/storage/local/database/shared_preferences/app_settings_shared_preferences.dart';
+import '../features/trip_details/presentation/controller/trip_details_controller.dart';
 
 initModule() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -7,11 +9,10 @@ initModule() async{
 }
 
 
-// initAuth() {
-//   disposeSplash();
-//   Get.put<AuthController>(AuthController());
-// }
-//
-// disposeAuth() {
-//   Get.delete<AuthController>();
-// }
+initTeipDetails() {
+  Get.put<TeipDetailsController>(TeipDetailsController());
+}
+
+disposeTeipDetails() {
+  Get.delete<TeipDetailsController>();
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tathkra/features/home/presentation/view/home_view.dart';
+import '../config/dependancy_injection.dart';
 import '../core/resources/manager_strings.dart';
 import '../features/add_company/presentation/view/add_company_view.dart';
 import '../features/auth/presentation/view/login_view.dart';
@@ -8,6 +9,7 @@ import '../features/book_a_trip/presentation/view/book_a_trip_view.dart';
 import '../features/company/presentation/view/company_view.dart';
 import '../features/company_name/presentation/view/company_name_view.dart';
 import '../features/tathkra_home/presentation/view/tathkra_home_view.dart';
+import '../features/trip_details/presentation/view/trip_details_view.dart';
 import '../features/trips/presentation/view/trips_view.dart';
 
 class Routes {
@@ -19,6 +21,7 @@ class Routes {
   static const String tathkraHomeView = '/tathkra_home_view';
   static const String tripsView = '/trips_view';
   static const String bookATrip = '/book_a_trip_view';
+  static const String tripDetailsView = '/trip_details_view';
 
 
 }
@@ -43,6 +46,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const TripsView());
       case Routes.bookATrip:
         return MaterialPageRoute(builder: (_) => const BookATrip());
+      case Routes.tripDetailsView:
+        initTeipDetails();
+        return MaterialPageRoute(builder: (_) => const TripDetailsView());
       default:
         return unDefineRoute();
     }
