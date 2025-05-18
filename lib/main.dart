@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('ar'), // اللغة العربية
-        Locale('en'), // اللغة الإنجليزية (اختياري)
+        Locale('ar'),
+        Locale('en'),
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.tripDetailsView,
