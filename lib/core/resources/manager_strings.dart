@@ -46,6 +46,8 @@ class ManagerStrings {
   static const String numberOfSeats = 'عدد المقاعد';
   static const String saveInformation = 'حفظ المعلومات';
   static const String cancellation = 'الغاء';
+  static const String confirmed = 'مؤكدة';
+  static const String waiting = 'بالانتظار';
 
 
 }
