@@ -31,5 +31,8 @@ class ManagerStrings {
   static const String eidt = 'تعديل';
   static const String reservationsAwaitingConfirmation = 'حجوزات بانتظار التأكيد';
   static const String numberOfConfirmedReservations = 'عدد الحجوزات المؤكدة';
+  static const String tripHistory = 'تاريخ الرحلة';
+  static const String editDetails = 'تعديل التفاصيل';
+  static const String addANewTrip = 'إضافة رحلة جديدة';
 
 }

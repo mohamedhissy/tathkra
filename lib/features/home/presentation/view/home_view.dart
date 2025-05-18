@@ -45,19 +45,21 @@ class HomeView extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          double screenWidth = constraints.maxWidth;
-          double cardWidth = screenWidth > 1000 ? 760 : screenWidth - 40;
-          double cardMargin = screenWidth > 1000 ? 360 : 20;
+          final screenWidth = MediaQuery.of(context).size.width;
+          final isLargeScreen = screenWidth > 1000;
 
           return SingleChildScrollView(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: cardMargin),
+              margin: EdgeInsets.symmetric(
+                horizontal: isLargeScreen ? screenWidth * 0.2 : 20,
+              ),
               child: Column(
                 children: [
                   SizedBox(height: ManagerHeight.h50),
+
                   // الكرت الأول
                   Container(
-                    width: cardWidth,
+                    width: isLargeScreen ? screenWidth * 0.6 : screenWidth - 40,
                     height: 140,
                     decoration: BoxDecoration(
                       color: ManagerColors.primaryColor,
@@ -99,7 +101,7 @@ class HomeView extends StatelessWidget {
 
                   // الكرت الثاني
                   Container(
-                    width: cardWidth,
+                    width: isLargeScreen ? screenWidth * 0.6 : screenWidth - 40,
                     height: 140,
                     decoration: BoxDecoration(
                       color: ManagerColors.green,
@@ -139,7 +141,7 @@ class HomeView extends StatelessWidget {
                   ),
                   SizedBox(height: ManagerHeight.h30),
 
-                  // كروت الصف السفلي: responsive Row / Column
+                  // كروت الصف السفلي
                   screenWidth > 800
                       ? Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -182,6 +184,8 @@ class HomeView extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: ManagerHeight.h20),
+
+                  // زر المدن والمناطق
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: ManagerColors.primaryColor,
