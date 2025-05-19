@@ -82,14 +82,77 @@ class TripDetailsView extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          centerTitle: true,
           automaticallyImplyLeading: false,
-          title: Text(
-            ManagerStrings.trips,
-            style: TextStyle(
-              fontSize: ManagerFontSizes.s44,
-              fontWeight: ManagerFontWeight.bold,
-            ),
+          centerTitle: true,
+          title: LayoutBuilder(
+            builder: (context, constraints) {
+              final screenWidth = constraints.maxWidth;
+
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // زر الحذف يسارًا
+                  Container(
+                    width: screenWidth > 500 ? 70 : 55,
+                    height: 36,
+                    margin: const EdgeInsets.only(right: 8),
+                    decoration: BoxDecoration(
+                      color: ManagerColors.red,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Center(
+                      child: Text(
+                        ManagerStrings.delete,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: screenWidth > 500
+                              ? ManagerFontSizes.s16
+                              : ManagerFontSizes.s14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  // العنوان بالمنتصف
+                  Expanded(
+                    child: Center(
+                      child: Text(
+                        ManagerStrings.trips,
+                        style: TextStyle(
+                          fontSize: screenWidth > 500
+                              ? ManagerFontSizes.s44
+                              : ManagerFontSizes.s28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  // السابق والسهم يمينًا
+                  Row(
+                    children: [
+                      Text(
+                        'السابق',
+                        style: TextStyle(
+                          color: ManagerColors.black,
+                          fontSize: ManagerFontSizes.s16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          color: ManagerColors.primaryColor,
+                          size: 28,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
+              );
+            },
           ),
         ),
         body: LayoutBuilder(

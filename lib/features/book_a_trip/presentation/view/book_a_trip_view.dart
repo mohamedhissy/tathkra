@@ -11,11 +11,17 @@ class BookATrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final containerWidth = screenWidth > 600 ? 500.0 : screenWidth * 0.9;
+    final horizontalMargin = screenWidth > 600 ? (screenWidth - containerWidth) / 2 : screenWidth * 0.05;
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.sync, color: ManagerColors.primaryColor, size: 44),
+          onPressed: () {},
+        ),
         title: Text(
           'SY001',
           style: TextStyle(
@@ -23,14 +29,29 @@ class BookATrip extends StatelessWidget {
             fontWeight: ManagerFontWeight.bold,
           ),
         ),
+        actions: [
+          Text(
+            'السابق',
+            style: TextStyle(
+              color: ManagerColors.black,
+              fontSize: ManagerFontSizes.s16,
+              fontWeight: ManagerFontWeight.bold,
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.arrow_forward_ios_sharp, color: ManagerColors.primaryColor, size: 44),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: ListView(
         children: [
           SizedBox(height: ManagerHeight.h50),
+
           // Card 1
           Container(
-            margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-            width: screenWidth * 0.9,
+            margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
+            width: containerWidth,
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             decoration: BoxDecoration(
               color: ManagerColors.bgColorcompany,
@@ -46,8 +67,7 @@ class BookATrip extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'SY001',
+                    Text('SY001',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: Colors.black,
@@ -55,8 +75,7 @@ class BookATrip extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
-                      'الاسم الكامل',
+                    Text('الاسم الكامل',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: Colors.black,
@@ -72,8 +91,7 @@ class BookATrip extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          'ذكر',
+                        Text('ذكر',
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -81,8 +99,7 @@ class BookATrip extends StatelessWidget {
                             fontWeight: ManagerFontWeight.regular,
                           ),
                         ),
-                        Text(
-                          ManagerStrings.gender,
+                        Text(ManagerStrings.gender,
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -94,8 +111,7 @@ class BookATrip extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          '0598776784',
+                        Text('0598776784',
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -103,8 +119,7 @@ class BookATrip extends StatelessWidget {
                             fontWeight: ManagerFontWeight.regular,
                           ),
                         ),
-                        Text(
-                          ManagerStrings.phoneBookATrip,
+                        Text(ManagerStrings.phoneBookATrip,
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -179,11 +194,13 @@ class BookATrip extends StatelessWidget {
               ],
             ),
           ),
+
           SizedBox(height: ManagerHeight.h10),
+
           // Card 2
           Container(
-            margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-            width: screenWidth * 0.9,
+            margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
+            width: containerWidth,
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             decoration: BoxDecoration(
               color: ManagerColors.bgColorcompany,
@@ -199,8 +216,7 @@ class BookATrip extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'SY001',
+                    Text('SY001',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: Colors.black,
@@ -208,8 +224,7 @@ class BookATrip extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
-                      'الاسم الكامل',
+                    Text('الاسم الكامل',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: Colors.black,
@@ -225,8 +240,7 @@ class BookATrip extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          'ذكر',
+                        Text('ذكر',
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -234,8 +248,7 @@ class BookATrip extends StatelessWidget {
                             fontWeight: ManagerFontWeight.regular,
                           ),
                         ),
-                        Text(
-                          ManagerStrings.gender,
+                        Text(ManagerStrings.gender,
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -247,8 +260,7 @@ class BookATrip extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          '0598776784',
+                        Text('0598776784',
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,
@@ -256,8 +268,7 @@ class BookATrip extends StatelessWidget {
                             fontWeight: ManagerFontWeight.regular,
                           ),
                         ),
-                        Text(
-                          ManagerStrings.phoneBookATrip,
+                        Text(ManagerStrings.phoneBookATrip,
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             color: Colors.grey,

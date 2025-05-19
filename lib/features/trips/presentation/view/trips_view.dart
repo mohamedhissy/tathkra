@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tathkra/core/resources/manager_colors.dart';
 import 'package:tathkra/core/resources/manager_height.dart';
 import 'package:tathkra/core/resources/manager_width.dart';
-
 import '../../../../core/resources/manager_font_sizes.dart';
 import '../../../../core/resources/manager_font_weight.dart';
 import '../../../../core/resources/manager_strings.dart';
@@ -13,6 +12,12 @@ class TripsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
+    final containerWidth = screenWidth > 600 ? 600.0 : screenWidth * 0.9;
+    final horizontalMargin = screenWidth > 600
+        ? (screenWidth - containerWidth) / 2
+        : screenWidth * 0.05;
+
     return Scaffold(
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -66,6 +71,10 @@ class TripsView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.sync, color: ManagerColors.primaryColor, size: 44),
+          onPressed: () {},
+        ),
         title: Text(
           ManagerStrings.trips,
           style: TextStyle(
@@ -73,13 +82,27 @@ class TripsView extends StatelessWidget {
             fontWeight: ManagerFontWeight.bold,
           ),
         ),
+        actions: [
+          Text(
+            'السابق',
+            style: TextStyle(
+              color: ManagerColors.black,
+              fontSize: ManagerFontSizes.s16,
+              fontWeight: ManagerFontWeight.bold,
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.arrow_forward_ios_sharp, color: ManagerColors.primaryColor, size: 44),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: ListView(
         children: [
-          SizedBox(height: ManagerHeight.h50,),
+          SizedBox(height: ManagerHeight.h50),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-            width: screenWidth * 0.9,
+            margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
+            width: containerWidth,
             height: 300,
             decoration: BoxDecoration(
               color: ManagerColors.bgColorcompany,
@@ -91,7 +114,7 @@ class TripsView extends StatelessWidget {
             ),
             child: Column(
               children: [
-                SizedBox(height: ManagerHeight.h20,),
+                SizedBox(height: ManagerHeight.h20),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 50),
                   child: Row(
@@ -127,7 +150,7 @@ class TripsView extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: ManagerHeight.h20,),
+                SizedBox(height: ManagerHeight.h20),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 50),
                   child: Row(
@@ -164,7 +187,7 @@ class TripsView extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: ManagerHeight.h10,),
+                SizedBox(height: ManagerHeight.h10),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 50),
                   child: Row(
@@ -216,7 +239,7 @@ class TripsView extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(width: ManagerWidth.w30,),
+                          SizedBox(width: ManagerWidth.w30),
                           Column(
                             children: [
                               Text(
@@ -244,7 +267,7 @@ class TripsView extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: ManagerHeight.h10,),
+                SizedBox(height: ManagerHeight.h10),
                 Divider(
                   color: Colors.grey[400],
                   thickness: 1,
@@ -252,7 +275,7 @@ class TripsView extends StatelessWidget {
                   indent: 16,
                   endIndent: 16,
                 ),
-                SizedBox(height: ManagerHeight.h10,),
+                SizedBox(height: ManagerHeight.h10),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 50),
                   child: Row(

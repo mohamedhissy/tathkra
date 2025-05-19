@@ -18,6 +18,10 @@ class ReservationsView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.sync, color: ManagerColors.primaryColor,size: 44,),
+          onPressed: () {},
+        ),
         title: Text(
           ManagerStrings.reservations,
           style: TextStyle(
@@ -25,6 +29,20 @@ class ReservationsView extends StatelessWidget {
             fontWeight: ManagerFontWeight.bold,
           ),
         ),
+        actions: [
+          Text(
+            'السابق',
+            style: TextStyle(
+              color: ManagerColors.black,
+              fontSize: ManagerFontSizes.s16,
+              fontWeight: ManagerFontWeight.bold,
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.arrow_forward_ios_sharp, color: ManagerColors.primaryColor,size: 44,),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {

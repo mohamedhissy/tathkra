@@ -45,7 +45,7 @@ class TathkraHomeView extends StatelessWidget {
           child: Icon(
             Icons.sync,
             color: ManagerColors.primaryColor,
-            size: 40,
+            size: 44,
           ),
         ),
         actions: [

@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         Locale('en'),
       ],
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.reservationsView,
+      initialRoute: Routes.tripsView,
       onGenerateRoute: RouteGenerator.getRoute,
     );
   }
