@@ -19,7 +19,7 @@ class ReservationsController extends GetxController {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: isSelected ? color : Colors.grey.shade400,
+        backgroundColor: isSelected ? color : Colors.grey,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
         elevation: 0,

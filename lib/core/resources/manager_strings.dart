@@ -48,6 +48,7 @@ class ManagerStrings {
   static const String cancellation = 'الغاء';
   static const String confirmed = 'مؤكدة';
   static const String waiting = 'بالانتظار';
+  static const String cancelled = 'ملغية';
 
 
 }

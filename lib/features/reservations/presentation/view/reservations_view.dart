@@ -63,7 +63,7 @@ class ReservationsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         controller.buildFilterButton(
-                          label: ManagerStrings.cancellation,
+                          label: ManagerStrings.cancelled,
                           color: ManagerColors.red,
                           isSelected: selected == 'cancelled',
                           onTap: () => controller.selectReservationStatus('cancelled'),
