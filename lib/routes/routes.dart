@@ -8,6 +8,7 @@ import '../features/auth/presentation/view/login_view.dart';
 import '../features/book_a_trip/presentation/view/book_a_trip_view.dart';
 import '../features/company/presentation/view/company_view.dart';
 import '../features/company_name/presentation/view/company_name_view.dart';
+import '../features/notifications/presentation/view/notifications_view.dart';
 import '../features/reservations/presentation/view/reservations_view.dart';
 import '../features/tathkra_home/presentation/view/tathkra_home_view.dart';
 import '../features/trip_details/presentation/view/trip_details_view.dart';
@@ -24,6 +25,7 @@ class Routes {
   static const String bookATrip = '/book_a_trip_view';
   static const String tripDetailsView = '/trip_details_view';
   static const String reservationsView = '/reservations_view';
+  static const String notificationsView = '/notifications_view';
 
 
 }
@@ -54,6 +56,8 @@ class RouteGenerator {
       case Routes.reservationsView:
         initReservations();
         return MaterialPageRoute(builder: (_) => ReservationsView());
+      case Routes.notificationsView:
+        return MaterialPageRoute(builder: (_) => NotificationsView());
       default:
         return unDefineRoute();
     }

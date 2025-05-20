@@ -49,6 +49,10 @@ class ManagerStrings {
   static const String confirmed = 'مؤكدة';
   static const String waiting = 'بالانتظار';
   static const String cancelled = 'ملغية';
+  static const String notifications = 'الاشعارات';
+  static const String newBooking = 'حجز جديد !';
+  static const String review = 'مراجعة';
+  static const String viewed = 'تمت المشاهدة';
 
 
 }

@@ -93,7 +93,7 @@ class CompanyView extends StatelessWidget {
                       color: ManagerColors.bgFrameColorcompany,
                       width: 1,
                     ),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 30),
