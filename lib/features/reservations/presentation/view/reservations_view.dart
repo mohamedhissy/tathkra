@@ -175,7 +175,33 @@ class ReservationsView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: Get.context!,
+                    builder: (ctx) => AlertDialog(
+                      backgroundColor: ManagerColors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      title: Center(
+                        child: Text(
+                          'ماهو سبب إلغاء الحجز؟',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _reasonButton(ctx, 'تم إلغاء الرحلة'),
+                          SizedBox(height: 8),
+                          _reasonButton(ctx, 'تم تأجيل الرحلة'),
+                          SizedBox(height: 8),
+                          _reasonButton(ctx, 'أسباب أخرى'),
+                        ],
+                      ),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
@@ -415,4 +441,98 @@ class ReservationsView extends StatelessWidget {
       ),
     );
   }
+
+  Widget _reasonButton(BuildContext ctx, String text) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(ctx).pop();
+        if (text == 'أسباب أخرى') {
+          showCustomReasonDialog(ctx); // نافذة الإدخال اليدوي
+        } else {
+          print("سبب الإلغاء: $text");
+        }
+      },
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 12),
+        decoration: BoxDecoration(
+          color: Colors.grey.shade300,
+          borderRadius: BorderRadius.circular(25),
+        ),
+        alignment: Alignment.center,
+        child: Text(text),
+      ),
+    );
+  }
+
+  void showCustomReasonDialog(BuildContext context) {
+    TextEditingController customReasonController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (ctx) {
+        return AlertDialog(
+          backgroundColor: ManagerColors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          title: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'يرجى ذكر السبب',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: ManagerFontSizes.s18,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 10),
+              Divider(
+                thickness: 1,
+                height: 1,
+                color: Colors.grey.shade400,
+                indent: 76,
+                endIndent: 76,
+              ),
+            ],
+          ),
+          content: Container(
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade300,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: TextField(
+              controller: customReasonController,
+              maxLines: 6,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration.collapsed(
+                hintStyle: TextStyle(
+                  color: ManagerColors.black,
+                ),
+                hintText: 'نص مخصص',
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                String reason = customReasonController.text.trim();
+                Navigator.of(ctx).pop();
+                print('سبب مخصص: $reason');
+              },
+              child: Text('تأكيد',style: TextStyle(
+                color: ManagerColors.black,
+                fontSize: ManagerFontSizes.s16,
+              ),),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 }
+
